@@ -2,17 +2,9 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 body {
   font-size: 12px;
-  font-family: Tahoma, Helvetica, Arial, 'PingFang SC', 'Heiti SC',
+  font-family: 'lucida grande', 'lucida sans unicode', lucida, helvetica,
     'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 }
 
@@ -21,13 +13,6 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.main {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background-color: #1a202f;
 }
 
 .pointer {
