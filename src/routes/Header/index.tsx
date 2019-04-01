@@ -9,7 +9,8 @@ import { HOME } from '@src/constants/path'
 import * as classNames from 'classnames'
 
 // assets
-import logo_url from '@assets/img/polar-logo.png'
+import logo_url_dark from '@assets/img/polar-logo-dark.png'
+import logo_url_light from '@assets/img/polar-logo-light.png'
 
 // css
 import * as styles from './Header.module.scss'
@@ -30,10 +31,13 @@ class Header extends React.Component<IProps> {
           [styles.navbarHome]: pathname === HOME,
         })}
       >
-        <div className={styles.container}>
+        <div className={'container'}>
           <div className={styles.containerContent}>
             <a className={styles.navbarBrand} href={HOME}>
-              <img src={logo_url} height={'100%'} />
+              <img
+                src={pathname === HOME ? logo_url_light : logo_url_dark}
+                height={'100%'}
+              />
             </a>
             <div className={styles.routeLink}>
               {routeConfig.map((item, i) => (

@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import MobxDevTools from 'mobx-react-devtools'
 
 import history from '@src/history'
-import { LOGIN, HOME } from '@constants/path'
+import { LOGIN, BASENAME } from '@constants/path'
 
 // import AuthRoute from '@components/Route'
 
@@ -23,8 +23,7 @@ export default class App extends React.Component {
           <React.Suspense fallback={<div>loading...</div>}>
             <Switch>
               <Route path={LOGIN} component={LoginPage} />
-              <Route exact path={HOME} component={Home} />
-
+              <Route path={BASENAME} component={Home} />
               <Route>
                 <ErrorPage homeTitle={process.env.REACT_APP_NAME} />
               </Route>

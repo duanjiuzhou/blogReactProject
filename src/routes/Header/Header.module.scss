@@ -9,50 +9,16 @@
   background-color: #f8f8f8;
   border-color: #e7e7e7;
   font-size: 14px;
+
   .navbar-brand {
     height: 50px;
     padding: 2px 15px;
   }
-  .link {
-    padding: 0 15px;
-    text-decoration: none;
-    color: #555;
-    &:hover {
-      color: #62ddac;
-    }
-  }
 
-  .active {
-    color: #62ddac;
-  }
-
-  .container {
-    padding: 0 15px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
   .container-content {
     display: flex;
   }
+
   @media (min-width: 768px) {
     .navbar-toggle {
       display: none;
@@ -64,10 +30,30 @@
     }
   }
 }
+
+.link {
+  padding: 0 15px;
+  text-decoration: none;
+  color: #555;
+  &:hover {
+    color: #62ddac;
+  }
+}
+
+.active {
+  color: #62ddac;
+}
+
 .navbar-home {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   position: absolute;
   z-index: 10;
   width: 100%;
+  & .link {
+    color: #ffffff;
+  }
+  & .active {
+    color: #62ddac;
+  }
 }

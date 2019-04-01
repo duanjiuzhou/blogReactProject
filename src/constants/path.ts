@@ -1,4 +1,5 @@
-export const HOME = '/'
+export const BASENAME = '/'
+export const HOME = '/home'
 export const LOGIN = '/login'
 export const BLOG = '/blog'
 export const DETAILS = (id: number) => `/details/${id}`
