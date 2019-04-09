@@ -2,6 +2,9 @@ import * as React from 'react'
 import { RouteComponentProps, withRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
 
+// rc
+import posed from 'react-pose'
+
 // type
 import { HOME } from '@src/constants/path'
 
@@ -14,24 +17,41 @@ import logo_url_light from '@assets/img/polar-logo-light.png'
 
 // css
 import * as styles from './Header.module.scss'
+import MyIcon from '@src/components/MyIcon'
 
 interface IProps extends RouteComponentProps {
   routeConfig: Array<{ path: string; name: string }>
 }
 
+const ContentWrapper = posed.div({
+  visible: { opaticy: 1, height: '100%' },
+  hidden: { opaticy: 0, height: 0 },
+})
+
 class Header extends React.Component<IProps> {
-  // this.props.location.pathname
+  state = {
+    isNavbarToggle: false,
+  }
+
+  setNavbarToggle = () => {
+    this.setState({ isNavbarToggle: !this.state.isNavbarToggle })
+  }
+
   render() {
     const pathname = this.props.location.pathname
-    console.log(this.props.location.pathname)
     const { routeConfig } = this.props
+    const { isNavbarToggle } = this.state
+
     return (
       <div
         className={classNames(styles.wrp, {
           [styles.navbarHome]: pathname === HOME,
         })}
       >
-        <div className={'container'}>
+        <div
+          className={'container'}
+          style={{ height: '50px', lineHeight: '50px' }}
+        >
           <div className={styles.containerContent}>
             <a className={styles.navbarBrand} href={HOME}>
               <img
@@ -52,8 +72,30 @@ class Header extends React.Component<IProps> {
               ))}
             </div>
           </div>
-          <div className={styles.navbarToggle}>图标</div>
+          <div className={styles.navbarToggle} onClick={this.setNavbarToggle}>
+            <MyIcon
+              type={'toggle'}
+              className={classNames(styles.navbarToggleIcon, {
+                [styles.navbarToggleIconActive]: isNavbarToggle,
+              })}
+            />
+          </div>
         </div>
+        <ContentWrapper
+          className={styles.contentWrapper}
+          pose={isNavbarToggle ? 'visible' : 'hidden'}
+        >
+          {routeConfig.map((item, i) => (
+            <NavLink
+              className={styles.toggleLink}
+              to={item.path}
+              key={'route1' + i}
+              activeClassName={styles.active}
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </ContentWrapper>
       </div>
     )
   }
