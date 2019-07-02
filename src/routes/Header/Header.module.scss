@@ -44,6 +44,7 @@
   .content-wrapper {
     background-color: rgba(0, 0, 0, 0.68);
     overflow: hidden;
+    padding: 0 10px;
   }
 
   @media (min-width: 768px) {
@@ -57,21 +58,23 @@
       display: none;
     }
   }
-}
-.toggle-link {
-  display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
-  text-decoration: none;
-  color: #ffffff;
-  &:hover {
-    color: #62ddac;
-  }
-  &:focus {
+
+  .toggle-link {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
     text-decoration: none;
+    color: #ffffff;
+    &:hover {
+      color: #62ddac;
+    }
+    &:focus {
+      text-decoration: none;
+    }
   }
 }
+
 .link {
   padding: 0 15px;
   text-decoration: none;

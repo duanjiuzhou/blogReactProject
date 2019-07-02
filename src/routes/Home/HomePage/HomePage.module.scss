@@ -1,12 +1,57 @@
 .wrp {
   padding: 0;
   .cover-info {
-    background-color: #19ddc4;
-    color: #ffffff;
     position: relative;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 86px 0px;
     height: 100vh;
+    background-color: #19ddc4;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+  }
+  .cover-info-title {
+    letter-spacing: 4px;
+    padding: 10px 0;
+    font-family: inherit;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  .cover-info-describe {
+    letter-spacing: 4px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    padding: 10px 0;
+  }
+  .footer-box-me {
+    margin-top: 15px;
+    & > a {
+      text-decoration: none;
+      display: inline-block;
+      margin-right: 5px;
+      text-align: center;
+      line-height: 42px;
+      width: 38px;
+      height: 38px;
+      color: rgba(255, 255, 255, 0.3);
+      transition: all 0.3s;
+      i {
+        font-size: 34px;
+      }
+    }
+  }
+
+  .jian-icon {
+    border: 2px solid #a7a5a7;
+    border-radius: 22px;
+    height: 35px !important;
+    width: 35px !important;
+    transition: all 0.3s;
   }
 }

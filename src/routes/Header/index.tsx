@@ -37,6 +37,12 @@ class Header extends React.Component<IProps> {
     this.setState({ isNavbarToggle: !this.state.isNavbarToggle })
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps: IProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.setState({ isNavbarToggle: false })
+    }
+  }
+
   render() {
     const pathname = this.props.location.pathname
     const { routeConfig } = this.props
